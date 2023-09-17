@@ -1,27 +1,26 @@
-<!-- 컴포지션 API -->
 <template>
   <div>
-    <button v-on:click="increment">Counter: {{ counter }}</button>
+    <p>이름</p>
+    <div>{{ reactiveObj.name }}</div>
+    <p>나이</p>
+    <div>{{ reactiveObj.age }}</div>
   </div>
 </template>
 
 <script>
-import { onMounted, ref } from 'vue'
+import { reactive } from 'vue'
 
 export default {
-  setup() {
-    const counter = ref(0)
-    const increment = () => {
-      counter.value++
-    }
+  setup(props, context) {
+    console.log(props, context)
 
-    onMounted(() => {
-      console.log('마운트 되었습니다.')
+    const reactiveObj = reactive({
+      name: '우대현',
+      age: 31
     })
 
     return {
-      counter,
-      increment
+      reactiveObj
     }
   }
 }
