@@ -1,3 +1,4 @@
+<!-- Options API -->
 <template>
   <div>
     <button v-on:click="increment">Counter: {{ counter }}</button>
