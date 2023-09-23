@@ -1,11 +1,18 @@
 <template>
-  <div></div>
+  <div>
+    <span v-text="msg"></span>
+    <span>{{ msg }}</span>
+  </div>
 </template>
 
 <script>
+import { ref } from 'vue'
+
 export default {
   setup() {
-    return {}
+    const msg = ref('안녕하세요')
+
+    return { msg }
   }
 }
 </script>
