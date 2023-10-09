@@ -22,7 +22,11 @@ export default {
       required: true
     }
   },
-  setup() {
+  setup(props) {
+    console.log(props.contents)
+    console.log(props.title)
+    console.log(props.type)
+
     return {}
   }
 }

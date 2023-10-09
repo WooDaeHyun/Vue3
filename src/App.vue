@@ -1,17 +1,24 @@
 <template>
-  <App_props title="제목" contents="내용" type="타입"></App_props>
-  <App_props :title="post.title" :contents="post.contents" :type="post.type"></App_props>
+  <div>
+    <postCreate @create-post="createPost" />
+  </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import App_props from './lectures/App_props.vue'
-
-const post = ref({
-  title: '제목제목제목제목제목',
-  contents: '내용내용내용내용내용내용',
-  type: 'news'
-})
+<script>
+import postCreate from './lectures/postCreate.vue'
+export default {
+  components: {
+    postCreate
+  },
+  setup() {
+    const createPost = (title) => {
+      console.log(title)
+    }
+    return {
+      createPost
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>
