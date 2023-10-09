@@ -1,11 +1,14 @@
 <template>
-  <div></div>
+  <div>{{ text }}</div>
 </template>
 
 <script>
+import { inject } from 'vue'
+
 export default {
   setup() {
-    return {}
+    const text = inject('message')
+    return { text }
   }
 }
 </script>
